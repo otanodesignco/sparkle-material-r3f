@@ -17,15 +17,15 @@ export function Skag(props)
   const { sparkleScale, sparkleIntensity, baseColor, fresnelColor,sparkleColor, fresnelAmt, fresnelAlpha, fresnelIntensity } = useControls({
     sparkleScale:
     {
-        value: 1,
+        value: 10,
         min: 1,
-        max: 20,
+        max: 100,
         step: 0.001
     }, sparkleIntensity:
     {
-        value: 90,
+        value: 30,
         min: 0.001,
-        max: 100,
+        max: 300,
         step: 0.001
     }, baseColor:
     {
@@ -59,7 +59,7 @@ export function Skag(props)
 
     useFrame((state, delta) =>
     {
-    
+        self.current.rotation.z += delta * 0.2
     })
 
   return (
@@ -70,6 +70,7 @@ export function Skag(props)
         ref={self}
       >
         <MeshSparkleMaterial
+            texture='./images/noise-voronoi.png'
             sparkleIntensity={sparkleIntensity}
             sparkleScale={sparkleScale}
             baseColor={baseColor}

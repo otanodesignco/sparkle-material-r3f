@@ -28,7 +28,7 @@ export default function MeshSparkleMaterial({
     const uniforms = {
         uNoiseTexture: noise,
         uScale: sparkleScale,
-        uIntensity: sparkleIntensity,
+        uIntensity: sparkleIntensity * 10,
         uBaseColor: new Color( baseColor ),
         uFresnelColor: new Color( fresnelColor ),
         uSparkleColor: new Color( sparkleColor ),

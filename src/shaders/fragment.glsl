@@ -29,10 +29,9 @@ void main()
     float clampedSparkle = clamp( sparkle, 0.0, 1.0 ); // restrict to 0-1 range
     sparkle = pow( clampedSparkle, uIntensity ); // increase darkness to reduce sparkles
 
-    float fresnel = dot( normal, viewDirection ) + 1.0; // fresnel calculation
+    float fresnel = pow( dot( normal, viewDirection ) + 1.0, uFresnelAmt ); // fresnel calculation
     float diffuse = dot( normal, view ); // lambert lighting calculation
     diffuse = max( diffuse, 0.0 );
-    fresnel = pow( fresnel, uFresnelAmt );
 
     vec3 color = uBaseColor;
     color *= diffuse;
