@@ -14,7 +14,7 @@ varying vec2 vUv;
 
 void main()
 {
-    vec2 uv = vUv;
+    vec2 uv = vUv * 0.5 + 0.5;
 
     vec3 viewDirection = normalize( vPosition - cameraPosition );
     vec3 view = normalize( cameraPosition - vPosition );

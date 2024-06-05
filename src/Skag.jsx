@@ -59,7 +59,7 @@ export function Skag(props)
 
     useFrame((state, delta) =>
     {
-        self.current.rotation.z += delta * 0.2
+
     })
 
   return (
