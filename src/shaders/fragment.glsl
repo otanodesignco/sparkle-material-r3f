@@ -49,7 +49,7 @@ void main()
 
 
 
-    gl_FragColor = finalColor;
+    gl_FragColor = fresnelColor;
     #include <tonemapping_fragment>
     #include <colorspace_fragment>
 
